@@ -37,9 +37,23 @@ void main()
 			    }
 			    catch (WrongDirection wd)
 			    {
-					cout << "Wrong direction input. Current direction: "
-						<< wd.dir << endl;
-					cout << "Input new direction ";
+					cout << "Wrong direction input. Current direction: ";
+					switch (wd.dir)
+                    {
+	                case NORTH:
+                		cout << "NORTH";
+                 		break;
+	                case EAST:
+		                cout << "EAST";
+		                break;
+	                case SOUTH:
+		                cout << "SOUTH";
+		                break;
+                 	case WEST:
+		                cout << "WEST";
+		                break;
+					}
+					cout << endl << "Input new direction ";
 					cin >> d;
 				}
 			}
