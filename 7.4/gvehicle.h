@@ -1,7 +1,7 @@
 #pragma once
 #include "vehicle.h"
 
-class GroundVehicle: public Vehicle
+class GroundVehicle: virtual public Vehicle
 {
 private:
 	double wheel_diam;
@@ -10,7 +10,7 @@ public:
 	  Vehicle(_motor_id), wheel_diam(_wheel_diam)
 	{
 	}
-  void print_full()
+    void print_full()
 	{
 		print_motor();
 		cout << "Wheel_diam = " << wheel_diam << endl;

@@ -7,12 +7,12 @@ class Aircraft: public GroundVehicle, public FlyingVehicle
 {
 public:
 	Aircraft( int _motor_id, double _wheel_diam, int _turbine_num ):
-	  GroundVehicle(_motor_id, _wheel_diam), FlyingVehicle(_motor_id, _turbine_num)
+	  GroundVehicle(_motor_id, _wheel_diam), FlyingVehicle(_motor_id, _turbine_num), Vehicle(_motor_id)
 	  {
 	  }
-	void print_full()
-	{
+	  void print_full()
+	  {
 		  GroundVehicle::print_full();
-		  FlyingVehicle::print_full();
-	}
+		  FlyingVehicle::print_turbine();
+	  }
 };

@@ -2,7 +2,7 @@
 
 #include "vehicle.h"
 
-class FlyingVehicle: public Vehicle
+class FlyingVehicle: virtual public Vehicle
 {
 private:
 	int turbine_num;
@@ -11,9 +11,13 @@ public:
 	  Vehicle(_motor_id), turbine_num(_turbine_num)
 	{
 	}
-  void print_full()
+    void print_turbine()
+	{
+		cout << "Turbine_num = " << turbine_num << endl;		
+	}
+    void print_full()
 	{
 		print_motor();
-		cout << "Turbine_num = " << turbine_num << endl;
+		print_turbine();
 	}
 };
