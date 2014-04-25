@@ -32,4 +32,7 @@ void main()
 	for (int i = 0; i < 5; i++)
 		cout << "Area " << i + 1 << " = " << s[i]->area() << endl;
 
+	for (int i = 0; i < 5; i++)
+		delete s[i];
+	delete [] s;
 }
