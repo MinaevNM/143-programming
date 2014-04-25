@@ -54,6 +54,7 @@ double f()
 		    cin >> A[w.index];		
 	    }
     }
+	delete [] A;
 	return res;
 }
 
