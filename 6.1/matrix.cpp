@@ -83,6 +83,7 @@ void matrix::swapBiggest( int from, int column )
 }
 
 // TODO: [A] сделать нерекурсивной
+// DONE
 void matrix::substFromAll( int num, int from, int column )
 {
     if (fabs(a[num][column]) < eps)
@@ -114,6 +115,8 @@ void matrix::findBasis( int freeVar, FILE * _f )
     {
         double * basis = new double[m - 1];
         // TODO: [A] Непонятно, что означают переменные t и f, m. Нужно дать им осознанные имена.
+		// t - temporary variable, used to count free variables number
+		// f - temporary variable, used to calculate shift in basis
         int t = m - 2;
         int f = 0;
 
