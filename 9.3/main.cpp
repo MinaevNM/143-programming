@@ -53,8 +53,9 @@ void main()
 	}
 
 	for (int i = 0; i < m; i++)
-		if (h->v[i])
-			cout << h->s[i] << " - " << h->v[i] << endl;
+		for (list<pair<char *, int>>::iterator it = h->s[i].begin(); it != h->s[i].end(); it++)
+			if (it->second)
+				cout << it->first << " - " << it->second << endl;
 
 	delete h;
 }
