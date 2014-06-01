@@ -1,13 +1,15 @@
 #pragma once
 
+#pragma warning(disable: 4244)
+
 #include <iostream>
 using namespace std;
 
 class fraq
 {
+public:
 	int p, q;
 
-public:
 	fraq() : p(0), q(1)
 	{
 	}
@@ -18,6 +20,16 @@ public:
 
 	fraq( int x, int y ) : p(x), q(y)
 	{
+	}
+
+	int getp()
+	{
+		return p;
+	}
+
+	int getq()
+	{
+		return q;
 	}
 
 	int gcd( int a, int b )
@@ -70,7 +82,6 @@ public:
 			return true;
 		return false;
 	}
-
 	bool operator==( fraq f )
 	{
 		this->toStandart();
@@ -135,5 +146,13 @@ public:
 	{
 		cout << p << "/" << q << endl;
 	}
-
+	fraq f_abs()
+	{
+		return fraq(abs(p), abs(q));
+	}
+	friend istream & operator>>( istream & stream, fraq & p );
+	friend ostream & operator<<( ostream & stream, const fraq & p );
 };
+
+
+

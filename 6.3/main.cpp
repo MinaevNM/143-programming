@@ -1,8 +1,6 @@
 #include <fstream>
 #include "gauss.h"
 
-#include "fraq.h"
-
 const char *testCalc = "testCalculate.txt";
 const char *testFindFree = "testFindFreeVar.txt";
 const char *testTrin = "testTrinagular.txt";

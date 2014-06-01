@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cmath>
+#include "fraq.h"
 
 using namespace std;
 
