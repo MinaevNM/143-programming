@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#pragma warning(disable : 4996)
+
 using namespace std;
 
 void main()
@@ -52,9 +54,8 @@ void main()
 		cout << v[i] << " ";
 
 	for (int i = 0; i < N + 1; i++)
-		delete d[i];
-	delete d;
-	delete w;
-	delete c;
+		delete [] d[i];
+	delete [] d;
+	delete [] w;
+	delete [] c;
 }
-
