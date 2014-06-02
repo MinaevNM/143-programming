@@ -1,5 +1,7 @@
 #include <iostream>
 
+#pragma warning(disable: 4996)
+
 using namespace std;
 
 void main()
@@ -8,6 +10,8 @@ void main()
 	int * a;
 	int * d;
 
+	freopen("input.txt", "rt", stdin);
+	freopen("output.txt", "wt", stdout);
 	cin >> n;
 	a = new int[n];
 	d = new int[n];
@@ -46,7 +50,7 @@ void main()
 	for (int i = 0; i < dmax + 1; i++)
 		cout << seq[i] << " ";
 
-	delete a;
-	delete d;
-	delete seq;
+	delete [] a;
+	delete [] d;
+	delete [] seq;
 }
