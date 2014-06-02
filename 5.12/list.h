@@ -117,6 +117,8 @@ public:
 	~List()
 	{
 		clear();
+		delete head;
+		delete tail;
 	}
 
 	void print()

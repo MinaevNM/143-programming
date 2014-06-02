@@ -12,10 +12,12 @@ List::iterator List::end()
 
 List::iterator List::insert( List::iterator position, const int & x )
 {
+	if (position == head)
+		return position;
 	Element * e = new Element;
 	e->data = x;
 	e->prev = position->prev;
-	e->next = position.operator->();
+	e->next = position.e;
 	e->prev->next = e;
 	e->next->prev = e;
 	size++;
@@ -24,7 +26,9 @@ List::iterator List::insert( List::iterator position, const int & x )
 
 List::iterator List::erase( List::iterator position )
 {
-	Element * e = position.operator->();
+	if (position.e == tail || position.e == head)
+		return position;
+	Element * e = position.e;
 	e->next->prev = e->prev;
 	e->prev->next = e->next;
 	position = iterator(e);
