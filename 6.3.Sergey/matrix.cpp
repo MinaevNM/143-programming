@@ -138,20 +138,30 @@ void matrix::findBasis( int freeVar, FILE * _f )
             int countZero = 0;
             int countNonZero = 0;
 
-			for (int j = 0; j < m - 1; j++)
-		    {
-                if (fracAbso(a[i][j]) == 0)
-                    countZero++;
-                else
-                    break;
-            }
-            countNonZero = m - 1 - countZero;
+			// COSTYL
+			int freeVariables = 0;
+			if (i == 0)
+			{
+				for (int j = 0; a[i][j] == 0; j++)
+					freeVariables++;
+			}
+			else
+			{
+			   for (int j = 0; j < m - 1; j++)
+		       {
+                    if (fracAbso(a[i][j]) == 0)
+                       countZero++;
+                    else
+                        break;
+                }
+                countNonZero = m - 1 - countZero;
 
-            if (countNonZero == 0)
-                continue;
+                if (countNonZero == 0)
+                    continue;
 
-//            cout << "T : " << t << "countZero : " << countZero << endl;
-            int freeVariables = t - countZero;
+                cout << "T : " << t << "countZero : " << countZero << endl;
+                freeVariables = t - countZero;
+			}
 	        if (freeVariables == 0)
             {
 //                cout << "\n1a :::::: " << a[i][t] << " t ::: " << t << endl;
@@ -165,8 +175,8 @@ void matrix::findBasis( int freeVar, FILE * _f )
             }
             else
             {
+				cout << freeVariables << endl;
 //                cout << "\n2a :::::: " << a[i][t] << " t ::: " << t << endl;
-				i
                 for (int k = 0; k < freeVariables; k++)
                 {
                     if (l == f)
