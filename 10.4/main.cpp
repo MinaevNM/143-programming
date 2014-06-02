@@ -1,11 +1,16 @@
 #include <iostream>
 #include <set>
 
+#pragma warning (disable: 4996)
+
 using namespace std;
 
 void main()
 {
 	int N, M;
+
+	freopen("input.txt", "rt", stdin);
+	freopen("output.txt", "wt", stdout);
 
 	cin >> N >> M;
 
@@ -35,4 +40,6 @@ void main()
 	for (int i = 0; i < N; i++)
 		cout << timetable[i] <<  " ";
 	cout << endl;
+
+	delete [] timetable;
 }
